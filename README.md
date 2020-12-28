@@ -1,6 +1,8 @@
 # mashiro
 
-> A Vue.js project
+> 在Sakura的基础上稍作了修改，暂时只写了PC端，移动端待定
+
+> 预览地址：http://xm17906193.gitee.io/vue-sakura
 
 ## Build Setup
 
