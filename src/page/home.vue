@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div class="home-background-img">
-      <img src="/static/image/1.png" />
+      <img src="https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/1.png" />
     </div>
     <self></self>
     <contents></contents>

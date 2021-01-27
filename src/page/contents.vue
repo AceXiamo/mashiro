@@ -1,7 +1,7 @@
 <template>
   <div id="contents">
     <div class="partingImg">
-      <img src="../../static/image/bilibili_1.png">
+      <img src="https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/bilibili_1.png">
     </div>
     <div class="details" v-for="(data,index) in details" :index="index" :style="{'margin-top':index>0?'50px':''}">
       <div @click="contentClick" class="content_image" :style="{'float':index%2==0?'left':'right'}">
@@ -34,7 +34,7 @@
             time: '2020-05-28',
             title: 'emmmmmm',
             short_content: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            img: '../../static/image/2.png',
+            img: 'https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/2.png',
             comment_num: '2',
             from: 'xiamo'
           },
@@ -42,7 +42,7 @@
             time: '2020-05-22',
             title: 'emmmmmmm',
             short_content: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            img: '../../static/image/2.png',
+            img: 'https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/2.png',
             comment_num: '1',
             from: 'xiamo'
           },

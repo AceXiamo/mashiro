@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <a @click="scrollClick"><img class="scroll" src="../static/image/scroll.png"></a>
-    <headbar ref="headbar"></headbar>
+    <headbar ref="headbar" @showSakura="showSakura"></headbar>
     <transition name="fade">
-      <router-view class="routerbar"></router-view>
+      <router-view class="routerbar" @changeHeadCss="changeHeadCss" @showSakura="showSakura"></router-view>
     </transition>
   </div>
 </template>
@@ -26,6 +26,21 @@
       home: home,
     },
     methods: {
+      showSakura(is){
+        this.$nextTick(function () {
+          // let canvas_sakura = document.getElementById('canvas_sakura')
+          // console.log(canvas_sakura)
+          // if (is){
+          //   canvas_sakura.style.display = "block"
+          // }else{
+          //   canvas_sakura.style.display = "none"
+          // }
+        })
+      },
+      changeHeadCss() {
+        // console.log("%c修改头部css", "color:red")
+        this.$refs.headbar.isTools = true
+      },
       handleScroll() {
         this.routerLink = this.$router.currentRoute.fullPath;
         if (this.routerLink === '/') {
@@ -63,7 +78,7 @@
       this.scrollTop = document.documentElement.clientHeight;
       this.scrollTop = 80 - (this.scrollTop - (947 - 150))
       this.$watch("routerLink", function (newValue, oldValue) {
-        if(newValue === '/'){
+        if (newValue === '/') {
           window.scrollTo(0, 0);
         }
       })

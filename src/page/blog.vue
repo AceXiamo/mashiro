@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <div class="background">
-      <img src="../../static/image/3.png">
+      <img src="https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/3.png">
     </div>
     <!--    <quill-editor ref="myTextEditor" v-model="content" :options="editorOption" style="height:600px;width: 50%;float:left" @change="onEditorChange"></quill-editor>-->
 
@@ -17,7 +17,7 @@
     </div>
 
     <div class="split-line blog-bar" style="text-align: center">
-      <img src="../../static/image/avatar.jpg">
+      <img src="https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/avatar.jpg">
       <div class="blogger" style="color: #ABABAB"><span>xiamo</span></div>
       <span class="signature" style="color: #7d8588"><i class="fas fa-pencil-alt" style="margin-right: 8px;color: #fe9600"></i>がんばって！</span>
     </div>
@@ -36,7 +36,7 @@
         editorOption: {
           placeholder: '编辑文章内容'
         },
-        next_blog_img: '../../static/image/10.jpg',
+        next_blog_img: 'https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/10.jpg',
         next_blog_title: 'emmmmmm',
       }
     },

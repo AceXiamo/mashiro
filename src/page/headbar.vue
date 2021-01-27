@@ -1,12 +1,12 @@
 <template>
-  <div class="headbar">
+  <div class="headbar" :class="[isTools?'dark':'']">
     <div :class="['top', jsHover?'topJsHover':'']">
-      <div class="img_div"><img src="static/image/star.png"></div>
-      <div class="title"><span>xiamo</span></div>
+      <div class="img_div"><img src="https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/star.png"></div>
+      <div class="title" @click="tolink('/')"><span>xiamo</span></div>
       <div :class="['menu',jsHover?'menuHover':'']">
         <div class="item" v-for="(data,index) in menu" :index="index">
           <div :class="['item_font',data.name]" @mouseenter="itemHover(data.name)" @mouseleave="itemLeave(data.name)">
-            <div @click="$router.push(data.link)">
+            <div @click="tolink(data.link)">
               <i :class="[data.class]"></i>
               <span>{{ data.text }}</span>
             </div>
@@ -23,6 +23,7 @@
     name: 'headbar',
     data() {
       return {
+        isTools: false,
         jsHover: false,
         menu: [
           {
@@ -44,12 +45,22 @@
             text: '随笔',
             class: 'fas fa-broom',
             index: 2,
-            link:'/'
+            link:'/tools'
           }
         ],
       }
     },
     methods: {
+      tolink(link){
+        if(link == "/tools"){
+          this.$emit("showSakura",false)
+          this.isTools = true
+        }else{
+          this.$emit("showSakura",true)
+          this.isTools = false
+        }
+        this.$router.push(link)
+      },
       itemHover(name) {
         $("." + name + ">.item_font_strip").css("width", "100%");
         $("." + name).css("color", "#fe9600");
@@ -63,7 +74,21 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
+  .dark{
+    color: white;
+
+    .top:hover {
+      background: rgba(0, 0, 0, .8);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+      transition: all .25s linear;
+    }
+
+    .topJsHover{
+      background: rgba(0, 0, 0, .8);
+    }
+  }
+
   .item {
     position: relative;
     margin-right: 20px;
@@ -111,6 +136,7 @@
   }
 
   .headbar {
+    max-width: 100vw;
     margin: -8px;
   }
 
@@ -120,11 +146,12 @@
   }
 
   .img_div > img {
-    width: 35px
+    width: 35px;
+    animation: img_spin 3s linear infinite;
   }
 
   .top:hover .img_div > img {
-    animation: img_spin 3s linear infinite;
+    /*animation: img_spin 3s linear infinite;*/
   }
 
   @keyframes img_spin {

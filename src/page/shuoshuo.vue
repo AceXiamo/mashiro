@@ -4,7 +4,7 @@
       <img src="../../static/image/3.png">
     </div>
     <div class="shuoshuo-bar" v-for="index of 5" :index="index">
-      <img class="avatar" src="../../static/image/avatar.jpg">
+      <img class="avatar" src="https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/avatar.jpg">
       <div class="shuoshuo-content">
         <span class="angle-right"><i class="fas fa-angle-right"></i></span>
         <div class="text-bar" :style="{'background':'rgba('+ colors[index%colors.length] +',1)','box-shadow':' 0 0 5px rgba('+ colors[index%colors.length] +',1)'}"
@@ -38,7 +38,7 @@
         editorOption: {
           placeholder: '编辑文章内容'
         },
-        next_blog_img: '../../static/image/10.jpg',
+        next_blog_img: 'https://xiamo.oss-cn-shenzhen.aliyuncs.com/gitee-mashiro/10.jpg',
         next_blog_title: 'emmmmmm',
         colors: [
           '208,182,213',
@@ -146,5 +146,9 @@
 
   .shuoshuo-bar:hover .avatar {
     transform: rotate(720deg);
+  }
+
+  .shuoshuo-bar:last-child{
+    padding-bottom: 200px;
   }
 </style>
