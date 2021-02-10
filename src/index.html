@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+	background-repeat: repeat-x;
+	background-position: bottom center;
+	background-color: #133D7C;
+}
+    /*#canvas {*/
+    /*  position: absolute;*/
+    /*  left: 0;*/
+    /*  top: 0;*/
+    /*  right: 0;*/
+    /*  bottom: 0;*/
+    /*  margin: auto;*/
+    /*}*/
+  </style>
+</head>
+<body>
+
+  <div id="canf" style="width: 100vw;height: 170px;background: #42b983">
+    <canvas id="canvas"></canvas>
+  </div>
+<!--  <canvas id="canvas"></canvas>-->
+
+  <script>
+    var canvas = document.getElementById('canvas')
+    var canf = document.getElementById('canf')
+    var ctx = canvas.getContext('2d')
+    var canvasW = canf.offsetWidth
+    var canvasH = canf.offsetHeight
+    var particles = []
+    // 数量
+    var maxParticles = 100
+
+    var random = function (min, max) {
+      return Math.random() * (max - min) + min
+    }
+
+    window.requestAnimationFrame = (function () {
+      var FPS = 60
+
+      return window.requestAnimationFrame  ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callBack) {
+          window.setTimeout(callBack, 1000/FPS)
+        }
+    })()
+
+    var Particle = function () {
+      this.x = Math.random() * canvasW
+      this.y = Math.random() * canvasH
+      // 大小
+      this.r = random(1, 3)
+      // 透明图
+      this.alpha = random(1, 1)
+      // 下落速度
+      this.velocity = {
+        // x: random(-0.35, 0.35),
+        // y: random(0.75, 1.5)
+        x: random(-0.35, -0.10),
+        y: random(0.75, 0.90)
+      }
+
+      this.draw = function () {
+        ctx.fillStyle = 'rgba(255, 255, 255, '+this.alpha+')'
+        ctx.shadowColor = "rgba(255, 255, 255,1)";
+        ctx.shadowBlur = 5;
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false)
+        ctx.closePath()
+        ctx.fill()
+      }
+
+      this.moving = function () {
+        this.x += this.velocity.x
+        this.y += this.velocity.y
+
+        if (this.y > canvasH) {
+          this.x = Math.random() * canvasW
+          this.y = 0
+        }
+
+        this.draw()
+      }
+    }
+
+    init()
+
+    function init() {
+      canvas.width = canvasW
+      canvas.height = canvasH
+
+      for (var i = 0; i < maxParticles; i++) {
+        particles.push(new Particle())
+      }
+
+      animate()
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvasW, canvasH)
+      particles.forEach(function (particle) {
+        particle.moving()
+      })
+
+      requestAnimationFrame(animate)
+    }
+  </script>
+
+</body>
+</html>
