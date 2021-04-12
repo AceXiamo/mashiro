@@ -1,0 +1,157 @@
+.auto-title {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  .add-icon {
+    margin-left: 5px;
+    font-size: 15px;
+    color: #efdc05;
+  }
+
+  > span {
+    z-index: 11;
+  }
+
+  .background {
+    background: #8dc63f;
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    z-index: 10;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  .background::after {
+    content: '';
+    background: #f199bc;
+    width: 90px;
+    height: 40px;
+    position: absolute;
+    z-index: 10;
+    clip-path: polygon(0 0, 90% 0, 80% 100%, 0 100%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .background:hover {
+    width: 180px;
+    transition: all 0.2s;
+  }
+}
+
+.tb-form {
+  position: relative;
+  display: flow-root;
+}
+
+.tb-form::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  height: 65%;
+  width: 5px;
+  background: #2ec4b6;
+}
+
+.avatar-uploader {
+  .avatar {
+    width: 178px;
+    height: 178px;
+    display: block;
+  }
+}
+
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409eff;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 178px;
+  line-height: 178px !important;
+  text-align: center;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+.model {
+  border-radius: 5px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 800px;
+  height: 700px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .close {
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .content {
+    overflow-x: hidden;
+
+    img,
+    video {
+      max-width: 700px;
+      height: 500px;
+    }
+  }
+
+  .info {
+    position: absolute;
+    bottom: 40px;
+    > span {
+    }
+  }
+}
+
+.mask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loading-x {
+    animation: loading-ani 1s infinite;
+  }
+}
+
+@keyframes loading-ani {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

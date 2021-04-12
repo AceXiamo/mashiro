@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'AdobeCleanHanSC';
-  src: url('../../static/font/emmmm.woff2');
+  src: url('https://xiamo.oss-cn-shenzhen.aliyuncs.com/font/emmmm.woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-*:not([class*="icon"]):not(i) {
-  font-family: "AdobeCleanHanSC" !important;
+*:not([class*='icon']):not(i) {
+  font-family: 'AdobeCleanHanSC' !important;
 }
 
 /**
@@ -17,10 +17,11 @@
   position: absolute;
   bottom: 0;
   height: 65px;
-  width:400%;
-  _filter:alpha(opacity=80);
+  width: 400%;
+  _filter: alpha(opacity=80);
   margin: -8px;
-  background: url("https://xiamo.oss-accelerate.aliyuncs.com/xiamo/background/wave1.png") repeat-x;
+  background: url('https://xiamo.oss-accelerate.aliyuncs.com/xiamo/background/wave1.png')
+    repeat-x;
   animation: waveMove1 90s linear infinite;
 }
 
@@ -28,53 +29,87 @@
   position: absolute;
   bottom: 0;
   height: 65px;
-  width:800%;
-  _filter:alpha(opacity=80);
+  width: 800%;
+  _filter: alpha(opacity=80);
   margin: -8px;
   left: 115px;
-  background: url("https://xiamo.oss-accelerate.aliyuncs.com/xiamo/background/wave2.png") repeat-x;
+  background: url('https://xiamo.oss-accelerate.aliyuncs.com/xiamo/background/wave2.png')
+    repeat-x;
   animation: waveMove2 90s linear infinite;
 }
 
-@keyframes waveMove1 {
+/* dialog显示隐藏动画start */
+.dialog-ani-enter-active {
+  animation: dialog-ani 0.3s;
+}
+
+.dialog-ani-leave-active {
+  animation: dialog-ani 0.3s reverse;
+}
+
+@keyframes dialog-ani {
   0% {
-    left: -1450px
-  }
-  50% {
-    left: 0px
+    opacity: 0;
+    transform: translateZ(0) scale(0.95);
   }
   100% {
-    left: -1450px
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
+}
+
+/* dialog显示隐藏动画end */
+
+@keyframes waveMove1 {
+  0% {
+    left: -1450px;
+  }
+  50% {
+    left: 0px;
+  }
+  100% {
+    left: -1450px;
   }
 }
 
 @keyframes waveMove2 {
   0% {
-    left: -2400px
+    left: -2400px;
   }
   50% {
-    left: 0px
+    left: 0px;
   }
   100% {
-    left: -2400px
+    left: -2400px;
   }
 }
+
 /**
 *波浪效果end
 */
 
+@keyframes img_spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*icon显示隐藏start*/
 @keyframes iconHideOrShow {
-  from{
+  from {
     opacity: 1;
   }
-  50%{
+  50% {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
+
 /*icon显示隐藏end*/
 
 /*scroll动画start*/
@@ -89,8 +124,16 @@
     margin-top: 0px;
   }
 }
+
 /*scroll动画end*/
 
+.shuoshuo-enter-active {
+  animation: slide-bottom 0.5s;
+}
+
+.shuoshuo-leave-active {
+  animation: bottom-out 0.5s;
+}
 
 .comment-enter-active {
   animation: slide-bottom 0.5s;
@@ -100,16 +143,18 @@
   animation: slide-bottom 0.5s reverse;
 }
 
-.fade-x-enter-active, .fade-x-leave-active {
-  transition: opacity .5s;
+.fade-x-enter-active,
+.fade-x-leave-active {
+  transition: opacity 0.5s;
 }
-.fade-x-enter, .fade-x-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-x-enter, .fade-x-leave-to /* .fade-leave-active below version 2.1.8 */
+ {
   opacity: 0;
   position: absolute;
   left: 0;
   right: 0;
 }
-
 
 .scale-down-x-enter-active {
   animation: scale-down 0.5s;
@@ -119,28 +164,149 @@
   animation: scale-down 0.5s reverse;
 }
 
-
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+ {
   opacity: 0;
 }
 
-span{
-  cursor:default;
+span {
+  cursor: default;
 }
 
-.border-bottom-x{
+.border-bottom-x {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 ::-moz-selection {
-  background: rgba(68,68,68,1);
+  background: rgba(68, 68, 68, 1);
   color: #ffffff;
 }
+
 ::selection {
-  background: rgba(68,68,68,1);
+  background: rgba(68, 68, 68, 1);
   color: #ffffff;
+}
+
+/* admin css start */
+@keyframes bottomTotop {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* admin-option title start */
+.options-title {
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.options-title-border-bottom {
+  background: #ffbc42;
+  width: 150px;
+  height: 5px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.options-title-border-bottom::after {
+  content: '';
+  background: #d81159;
+  width: 75px;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* admin-option title end */
+
+.border-x-30 {
+  margin: 30px 0;
+  width: 102%;
+  border: 1px dashed black;
+}
+
+.title-first {
+  font-size: 18px;
+  position: relative;
+  font-weight: bold;
+}
+
+.title-first > span {
+  /*filter: drop-shadow(0 0 12px rgba(241,107,111,.5));*/
+  background-image: -webkit-linear-gradient(45deg, #abdcff, #736efe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s;
+}
+
+@keyframes huxi {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*.title-first:hover .line{*/
+/*  width: 15%;*/
+/*  transition: all .5s;*/
+/*}*/
+/*.line{*/
+/*  position: absolute;*/
+/*  background: rgba(255,116,0,1);*/
+/*  height: 3px;*/
+/*  width: 0%;*/
+/*  border-radius: 10px;*/
+/*  left: 0;*/
+/*  bottom: 0;*/
+/*  transition: width .5s;*/
+/*}*/
+
+/**/
+
+/* admin css end */
+
+.el-message {
+  z-index: 2016 !important;
+}
+
+.pc-tip-beian {
+  position: absolute;
+  bottom: 25px;
+  font-size: 13px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pc-tip-beian img {
+  height: 20px;
+  animation: img_spin 3s linear infinite;
+}
+
+.pc-tip-beian span {
+  margin-top: 4px;
+  margin-left: 5px;
 }
