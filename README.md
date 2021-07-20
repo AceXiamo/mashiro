@@ -4,6 +4,8 @@
 
 > 预览地址：<a href="https://mashiro.xiamoqwq.com" target="_blank" style="color:LightPink">click here~</a>
 
+<img src="https://xiamo.oss-accelerate.aliyuncs.com/xiamo/WordPress/2021/07/bef7e3726f190ee58a416d7ce4edf76b.png?x-oss-process=style%2Ffull" style="width:300px"/>
+
 ## Build Setup
 
 ``` bash
