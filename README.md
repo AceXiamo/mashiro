@@ -2,7 +2,7 @@
 
 > 在Sakura的基础上稍作了修改，暂时只写了PC端，移动端待定
 
-> 预览地址：<a href="https://mashiro.xiamoqwq.com/vue-sakura" target="_blank" style="color:LightPink">click here~</a>
+> 预览地址：<a href="https://mashiro.xiamoqwq.com" target="_blank" style="color:LightPink">click here~</a>
 
 ## Build Setup
 
