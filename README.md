@@ -1,32 +1,43 @@
 # mashiro
 
-> 在Sakura的基础上稍作了修改，暂时只写了PC端，移动端待定
+<img src="https://xiamo.oss-accelerate.aliyuncs.com/xiamo/WordPress/2021/07/66e9228f00e667164d216b4c91b9bf12.png?x-oss-process=style%2Ffull" style="width:100%"/>
+
+## About
+
+博客采用的是前后端分离的方式
+
+后端：java，Spring Boot，MyBatis，MySQL
+
+前端：Vue，ElementUi， FontAwesome，vue-quill-editor，ColorUi等
+
+后端传送门：
+
+[click here~](https://gitee.com/xm17906193/mashiro_api?_from=gitee_search)
+
+
+
+> 参考自Sakura，暂时只写了PC端，移动端待定
 
 > 预览地址：<a href="https://mashiro.xiamoqwq.com/vue-sakura" target="_blank" style="color:LightPink">click here~</a>
 
-## Build Setup
+<span style="color:#E53A40">注：</span>
 
-``` bash
-# install dependencies
+- 主项目需要配合API食用，纯静态可解压项目下mashiro_static.zip安装运行
+
+
+
+## static
+
+（该版本未包含后台）
+
+#### 纯静态博客运行方式
+
+```bash
+// 解压
+unzip mashiro_static.zip
+// 安装依赖
 npm install
-
-# serve with hot reload at localhost:8080
+// 启动
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
