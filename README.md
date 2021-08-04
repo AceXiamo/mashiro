@@ -10,19 +10,7 @@
 
 前端：Vue，ElementUi， FontAwesome，vue-quill-editor，ColorUi等
 
-后端传送门：
-
-<a href="https://gitee.com/xm17906193/mashiro_api?_from=gitee_search">
-<div class="link" style="font-size:15px;">
-<img src="https://xiamo.oss-cn-shenzhen.aliyuncs.com/xiamo/icon/%E9%93%BE%E6%8E%A5.png"/>
-<span>click!!!</span>
-</div>
-</a>
-<style>
-.link>img{
-    height:15px
-}
-</style>
+后端传送门： <a href="https://gitee.com/xm17906193/mashiro_api?_from=gitee_search"><span>click!!!</span></a>
 
 
 
