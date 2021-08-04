@@ -19,7 +19,7 @@
 
 > 参考自Sakura，暂时只写了PC端，移动端待定
 
-> 预览地址：<a href="https://mashiro.xiamoqwq.com/vue-sakura" target="_blank" style="color:LightPink">click here~</a>
+> 预览地址：<a href="https://mashiro.xiamoqwq.com" target="_blank" style="color:LightPink">click here~</a>
 
 <span style="color:#E53A40">注：</span>
 
