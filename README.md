@@ -10,7 +10,7 @@
 
 前端：Vue，ElementUi， FontAwesome，vue-quill-editor，ColorUi等
 
-后端传送门： <a href="https://gitee.com/xm17906193/mashiro_api?_from=gitee_search"><span>click!!!</span></a>
+后端传送门： <a href="https://github.com/xm17906193/mashiro_api"><span>click!!!</span></a>
 
 
 
